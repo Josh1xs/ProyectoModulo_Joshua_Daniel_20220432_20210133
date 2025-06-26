@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Vehiculos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Vehiculos</title>
 </head>
@@ -16,10 +18,66 @@
         </div>
     </div>
 
-    <div class="Contenido"> 
-        <h1>Contenido Principal</h1>
-        
-    </div>
+    <main class="container"> 
+        <h2>CRUD de Vehiculos</h2>
+
+    <!--Formulario-->
+    <form id="vehiculo-form" class="vehiculo-form">
+
+ <div class="flex">
+        <label for="tipo">Tipo:
+          <input type="text" id="tipo" required />
+        </label>
+        <label for="marca">Marca:
+          <input type="text" id="marca" required />
+        </label>
+        <label for="modelo">Modelo:
+            <input type="text" id="modelo" required />
+          </label>
+          <label for="color">Color:
+            <input type="text" id="color" required />
+          </label>
+          <label for="placa">Placa:
+            <input type="text" id="placa" required />
+          </label>
+          <label for="anio">Año:
+            <input type="text" id="anio" required />
+          </label>
+        <label for="imagen-file">Imagen:
+          <input type="file" id="imagen-file" accept="image/*" />
+        </label>
+      </div>
+      
+      <input type="hidden" id="imagen-url" />
+
+      <input type="hidden" id="vehiculo-id" />
+
+      <button type="submit" id="btn-submit">Agregar</button>
+
+      <button type="button" id="btn-cancel" hidden>Cancelar</button>
+
+    </form>
+    <hr />
+
+    <!--Tabla de Vehiculos-->
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Placa</th>
+                <th>Año</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+              </tr>
+        </thead>
+        <tbody id="vehiculos-tbody">
+        </tbody>
+    </table>
+</main>
+
 </body>
-<script src="JS/script.js"></script>
+<script src="JS/Vehiculos.js"></script>
 </html>

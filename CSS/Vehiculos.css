@@ -1,0 +1,39 @@
+h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.vehiculo-form {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .vehiculo-form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .vehiculo-form .flex label {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+  }
+  
+  .vehiculo-form button {
+    margin-top: 1rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
