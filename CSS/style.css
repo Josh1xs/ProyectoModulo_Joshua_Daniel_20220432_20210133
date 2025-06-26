@@ -1,49 +1,113 @@
-body{
+*{
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+  }
+  
+  body {
     display: flex;
-}
-
-.sidebar{
-    width: 250px;
+    flex-direction: row;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #E7E4E4;
+    min-height: 100vh;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    width: 220px;
+    background-color: #ffffff;
     height: 100vh;
-    background-color: #fff;
-    border-right: 1px solid #eee;
-    padding: 20px 0;
-}
-
-.logo{
-    text-align: center;
-    font-size: 28px;
+    padding: 1.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #3C0000;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #4d0b0b;
-    margin-bottom: 30px;
-}
-
-.menu a{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2rem;
+  }
+  
+  /* NAVIGATION */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .menu a {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    color: #8B0000;
     text-decoration: none;
-    color: #4d0b0b;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.menu a:hover{
-    background-color: #e8a4a4;
-}
-
-.menu i{
-    margin-right: 15px;
-    font-size: 20px;
-}
-
-.Contenido{
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.menu a.active{
-    background-color: #e8a4a4;
-}
+    transition: background-color 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: rgba(231, 76, 60, 0.2); /* rojo suave */
+  }
+  
+  .menu i {
+    width: 20px;
+    text-align: center;
+  }
+  
+  .menu span {
+    flex: 1;
+    white-space: nowrap;
+  }
+  
+  /* MAIN CONTENT */
+  main {
+    margin-left: 220px;
+    padding: 2rem;
+    width: calc(100% - 220px);
+    transition: all 0.3s ease;
+  }
+  
+  /* RESPONSIVE MENU */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding: 1rem;
+    }
+  
+    main {
+      margin-left: 0;
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .menu {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .menu a {
+      flex: 1 1 45%;
+      justify-content: center;
+    }
+  
+    .logo {
+      text-align: left;
+      font-size: 1.4rem;
+    }
+  }

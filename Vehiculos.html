@@ -12,14 +12,17 @@
 <body>
     <div class="sidebar">
         <div class="logo">VehixControl</div>
-        <div class="menu">
-            <a href="Inicio.html"><i class="fas fa-home"></i>Inicio</a>
-            <a href="#" class="active"><i class="fas fa-car"></i>Vehiculos</a>
-        </div>
-    </div>
+        <nav class="menu">
+          <a href="Inicio.html" class="active"><i class="fas fa-home"></i><span>Inicio</span></a>
+          <a href="Vehiculos.html"><i class="fas fa-car"></i><span>Vehículos</span></a>
+        </nav>
+      </div>
 
-    <main class="container"> 
+      <main class="Contenido"> 
         <h2>CRUD de Vehiculos</h2>
+        <div id="cards-container" class="cards-grid">
+
+        </div>
 
     <!--Formulario-->
     <form id="vehiculo-form" class="vehiculo-form">
@@ -60,22 +63,25 @@
     <hr />
 
     <!--Tabla de Vehiculos-->
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Color</th>
-                <th>Placa</th>
-                <th>Año</th>
-                <th>Imagen</th>
-                <th>Acciones</th>
-              </tr>
-        </thead>
-        <tbody id="vehiculos-tbody">
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Placa</th>
+                    <th>Año</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="vehiculos-tbody">
+            </tbody>
+        </table>
+    </div>
 </main>
 
 </body>

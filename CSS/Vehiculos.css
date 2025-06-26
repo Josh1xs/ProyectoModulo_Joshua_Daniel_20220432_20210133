@@ -1,9 +1,10 @@
-h2{
+h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-}
-
-.vehiculo-form {
+  }
+  
+  /* FORMULARIO DE VEHÍCULOS */
+  .vehiculo-form {
     margin-bottom: 2rem;
     padding: 1rem;
     background-color: #f9f9f9;
@@ -24,9 +25,18 @@ h2{
   
   .vehiculo-form button {
     margin-top: 1rem;
+    background-color: #8B0000;
+  }
+  
+  /* TABLA DE VEHÍCULOS */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* suave en iOS */
   }
   
   table {
+    min-width: 600px; /* evita que se colapsen las columnas */
     width: 100%;
     border-collapse: collapse;
   }
@@ -35,5 +45,13 @@ h2{
     padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* evita saltos de línea */
   }
+
+  table button{
+    background-color: #C64040;
+    border: black;
+  }
+  
+  
   
