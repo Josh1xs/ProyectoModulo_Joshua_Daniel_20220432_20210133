@@ -48,17 +48,30 @@ function CargarTabla(vehiculos){
 window.addEventListener('DOMContentLoaded', CargarVehiculos);
 
 async function BorrarVehiculo(id) {
-    const confirmacion = confirm('¿Eliminar este vehiculo?');
-
-    if (confirmacion) {
-        await fetch(`${API_URL}/${id}`, {method: 'DELETE' });
-        CargarVehiculos();
-        alert("El registro fue eliminado");
-    }else{
-        alert("Se cancelo la accion");
-        return;
+    const resultado = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará el vehículo de forma permanente.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    });
+  
+    if (resultado.isConfirmed) {
+      try {
+        await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+        await CargarVehiculos();
+  
+        Swal.fire('¡Eliminado!', 'El vehículo fue eliminado con éxito.', 'success');
+      } catch (error) {
+        Swal.fire('Error', 'No se pudo eliminar el vehículo.', 'error');
+      }
+    } else {
+      Swal.fire('Cancelado', 'La acción fue cancelada.', 'info');
     }
-} 
+  }
 
 async function CargarParaEditar(id) {
     const res = await fetch(`${API_URL}/${id}`);
@@ -114,7 +127,7 @@ form.addEventListener('submit',async (e) =>{
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)
         });
-        alert("Registro Actualizado");
+        Swal.fire('¡Actualizado!', 'El vehículo fue modificado correctamente.', 'success');
     }
     else {
         await fetch(API_URL, {
@@ -122,7 +135,7 @@ form.addEventListener('submit',async (e) =>{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
-        alert("Registro agregado");
+        Swal.fire('¡Hecho!', 'Vehículo agregado con éxito', 'success');
     }
     form.reset();
     cancelBtn.hidden = true;
