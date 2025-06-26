@@ -21,9 +21,9 @@ function CargarTarjetas(vehiculos){
     vehiculos.forEach(vehiculos => {
         container.innerHTML += `
         <div class="card">
-        <h2>${vehiculos.marca}</h2>
-        <img src="${vehiculos.imagen}" alt= "Foto de perfil">
-        <p>${vehiculos.placa}</p>
+        <h2>${vehiculos.Marca}</h2>
+        <img src="${vehiculos.Imagen}" alt= "Foto de perfil">
+        <p>${vehiculos.Placa}</p>
         </div>
          `;
     });
