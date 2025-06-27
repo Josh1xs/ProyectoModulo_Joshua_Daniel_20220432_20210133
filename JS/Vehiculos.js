@@ -129,9 +129,17 @@ const palabrasMarca = marca.value.trim().split(/\s+/).length;
         return Swal.fire('Error', 'El campo Color solo debe contener letras.', 'error');
     }
     if (!formatoPlaca.test(placa.value)) {
-    return Swal.fire('Error', 'La placa debe tener el formato: P222-111 (una letra, tres números, guion y tres números).', 'error');
-}
-
+        return Swal.fire('Error', 'La placa debe tener el formato: P222-111 (una letra, tres números, guion y tres números).', 'error');
+    }
+    if (!/^\d{4}$/.test(anio.value) || anioNumero < 1900 || anioNumero > new Date().getFullYear()) {
+        return Swal.fire('Error', 'El campo Año debe tener 4 dígitos y estar entre 1900 y el año actual.', 'error');
+    }
+    if (isNaN(precio.value) || Number(precio.value) <= 0 || 100000000 < Number(precio.value)) {
+        return Swal.fire('Error', 'El precio debe ser un número válido, mayor que 0 y menor que 100,000,000.', 'error');
+    }
+    if (!imagenUrlEl.value && imagenFileEl.files.length === 0) {
+        return Swal.fire('Error', 'Debes subir una imagen del vehículo.', 'error');
+    }
 
     let imagenUrl = imagenUrlEl.value;
     if (imagenFileEl.files.length > 0){
