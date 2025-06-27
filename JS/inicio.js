@@ -1,4 +1,4 @@
-const API_URL = 'https://retoolapi.dev/Pz0Vpi/Vehiculo'
+const API_URL = 'https://retoolapi.dev/bAyRhX/data'
 const container = document.getElementById('cards-container')
 
 async function CargarVehiculos(params) {
@@ -8,7 +8,7 @@ async function CargarVehiculos(params) {
         CargarTarjetas(data);
     } catch (error) {
         console.error('Error al cargar datos: ', error)
-        container.innerHTML = '<p>Error al cargar las personas.</p>'
+        container.innerHTML = '<p>Error al cargar los vehiculos.</p>'
     }
 }
 
