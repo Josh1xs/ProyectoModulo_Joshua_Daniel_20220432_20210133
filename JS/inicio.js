@@ -15,15 +15,20 @@ async function CargarVehiculos(params) {
 function CargarTarjetas(vehiculos){
     container.innerHTML = '';
     if(vehiculos.length == 0){
-        container.innerHTML = "<p>No hay personas registradas</p>";
+        container.innerHTML = "<p>No hay vehiculos registrados</p>";
         return;
     }
     vehiculos.forEach(vehiculos => {
         container.innerHTML += `
         <div class="card">
         <h2>${vehiculos.Marca}</h2>
+        <h2>${vehiculos.Modelo}</h2>
         <img src="${vehiculos.Imagen}" alt= "Foto de perfil">
+        <p>${vehiculos.Tipo}</p>
+        <p>${vehiculos.Color}</p>
         <p>${vehiculos.Placa}</p>
+        <p>${vehiculos.Anio}</p>
+         <p>$${vehiculos.precio}</p>
         </div>
          `;
     });
